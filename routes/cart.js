@@ -33,6 +33,7 @@ router.get('/', authenticateToken, async (req, res) => {
 
 
 // PUT /api/cart/:id
+// PUT /api/cart/:id
 router.put('/:id', authenticateToken, async (req, res) => {
   const { id } = req.params;
   const { product_id, quantity } = req.body;
@@ -67,6 +68,7 @@ router.put('/:id', authenticateToken, async (req, res) => {
     res.status(500).json({ error: 'Error updating cart item quantity' });
   }
 });
+
 
 // DELETE /api/cart/:id
 router.delete('/:id', authenticateToken, async (req, res) => {
